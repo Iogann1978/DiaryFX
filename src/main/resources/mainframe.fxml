@@ -40,7 +40,7 @@
             </Tab>
             <Tab fx:id="tabText" text="Редактор Text">
               <content>
-                <TextArea fx:id="textEditor" minHeight="0.0" minWidth="0.0" />
+                <TextArea fx:id="textEditor" minHeight="0.0" minWidth="0.0" wrapText="true" />
               </content>
             </Tab>
             <Tab fx:id="tabTags" text="Редактор тегов">
