@@ -145,7 +145,7 @@ public class DiaryController implements Controller
 	    Optional<ButtonType> result = dialog.showAndWait();
 
 		if(result.isPresent() && result.get() == ButtonType.OK)	{
-			String textHTML = "<html><header><meta content=\"text/html;charset=UTF-8\"/></header><body><h1>" + addController.getTextInput().getText() + "</h1><hr/></body></html>";
+			String textHTML = "<html><head><meta content=\"text/html;charset=UTF-8\"/></head><body><h1>" + addController.getTextInput().getText() + "</h1><hr/></body></html>";
 			Diary diary = new Diary();
 			diary.setDate(addController.getDateInput().getValue().format(DateTimeFormatter.ofPattern(DATE_FORMAT)) + " " +
 				addController.getTimeInput().getValue().format(DateTimeFormatter.ofPattern(TIME_FORMAT)));
