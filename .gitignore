@@ -1,0 +1,9 @@
+/target
+*.class
+.classpath
+.project
+*.csv
+/.settings
+*.iml
+*.sh
+/.idea
