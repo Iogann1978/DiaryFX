@@ -7,3 +7,5 @@
 *.iml
 *.sh
 /.idea
+*.properties
+*.lck
