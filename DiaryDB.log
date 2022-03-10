@@ -1,2 +1,12 @@
 /*C3*/SET SCHEMA PUBLIC
+INSERT INTO DIARY VALUES(598,'2022-03-10 11:01:54','<html><head><meta content="text/html;charset=UTF-8"/></head><body><h1>JmsTemplate. \u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f \u0438 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0430 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f</h1><hr/></body></html>','JmsTemplate. \u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f \u0438 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0430 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 599
+COMMIT
+DELETE FROM DIARY WHERE ID=598
+INSERT INTO DIARY VALUES(598,'2022-03-10 11:01:54','<html><head><meta content="text/html;charset=UTF-8"/></head>\u000a<body>\u000a<h1>JmsTemplate. \u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f \u0438 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0430 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f</h1><hr/>\u000a<pre><code class="lang-java">jmsTemplate.send<span class="hljs-function"><span class="hljs-params">(destination, (session) -&gt; {\u000a    Message message = <span class="hljs-keyword">this</span>.messageConverter.toMessage(content, session);\u000a    message.setJMSDeliveryMode(<span class="hljs-number">1</span>);\u000a    message.setJMSCorrelationID(correlationId);\u000a    message.setStringProperty(UipMessageHeader.UIPSYSTEMDATA.name(), (String)parameters.remove(UipMessageHeader.UIPSYSTEMDATA.name()));\u000a    <span class="hljs-keyword">if</span> (StringUtils.isNotBlank(priority) &amp;&amp; StringUtils.isNumeric(priority)) {\u000a        message.setJMSPriority(Integer.parseInt(priority));\u000a    } <span class="hljs-keyword">else</span> {\u000a        message.setJMSPriority(<span class="hljs-number">5</span>);\u000a    }\u000a\u000a    String serviceName = (String)parameters.remove(UipMessageHeader.SERVICENAME.name());\u000a    <span class="hljs-keyword">if</span> (StringUtils.isNotBlank(serviceName)) {\u000a        message.setStringProperty(UipMessageHeader.SERVICENAME.name(), serviceName);\u000a    }\u000a\u000a    <span class="hljs-keyword">return</span> message;\u000a})</span>;</span>\u000a</code></pre>\u000a</body></html>','JmsTemplate. \u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f \u0438 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0430 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f')
+COMMIT
+INSERT INTO LINK_DIARY_TAGS VALUES(598,12)
+COMMIT
+DISCONNECT
+/*C3*/SET SCHEMA PUBLIC
 DISCONNECT
